@@ -101,7 +101,7 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (bottomEdge >= scrollView.contentSize.height) {
-            
+            viewModel?.onDidScrollToBottom()
         }
     }
     

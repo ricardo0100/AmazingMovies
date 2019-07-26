@@ -23,6 +23,7 @@ class MainViewModel {
     private let apiManager: APIManager
     private weak var delegate: MainViewModelDelegate?
     private var page = 1
+    private var isFetching = false
     
     init(delegate: MainViewModelDelegate, apiManager: APIManager) {
         self.delegate = delegate
@@ -31,7 +32,10 @@ class MainViewModel {
     
     func onViewDidLoad() {
         delegate?.setLayoutMode(mode: .grid)
+        isFetching = true
         apiManager.fetchTrendingMovies(page: page) { [weak self] movies in
+            self?.isFetching = false
+            self?.page += 1
             self?.delegate?.appendMovies(movies: movies)
         }
     }
@@ -46,6 +50,16 @@ class MainViewModel {
     
     func onDidSelect(movie: FetchTrendingMoviesResponse.Movie) {
         delegate?.showMovieDetails(movie: movie)
+    }
+    
+    func onDidScrollToBottom() {
+        if isFetching { return }
+        isFetching = true
+        apiManager.fetchTrendingMovies(page: page) { [weak self] movies in
+            self?.isFetching = false
+            self?.page += 1
+            self?.delegate?.appendMovies(movies: movies)
+        }
     }
     
 }
