@@ -13,7 +13,10 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     static func newInstance() -> UIViewController {
         let viewController = UIStoryboard.loadViewController() as MainCollectionViewController
         viewController.viewModel = MainViewModel(delegate: viewController, apiManager: APIManagerImplementation())
-        return UINavigationController(rootViewController: viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.tintColor = .white
+        return navigationController
     }
     
     private var viewModel: MainViewModel?
@@ -23,6 +26,10 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.onViewDidLoad()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

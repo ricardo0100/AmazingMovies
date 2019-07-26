@@ -13,7 +13,7 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     
     @IBOutlet private weak var backdropImageView: UIImageView!
     @IBOutlet private weak var posterImageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var overviewLabel: UILabel!
     
     private var viewModel: DetailsViewModel?
     
@@ -33,9 +33,10 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
 extension DetailsViewController: DetailsViewModelDelegate {
     
     func update(with movie: FetchTrendingMoviesResponse.Movie) {
-        titleLabel.text = movie.title
+        title = movie.title
         backdropImageView.kf.setImage(with: movie.backdropURL)
         posterImageView.kf.setImage(with: movie.posterURL)
+        overviewLabel.text = movie.overview
     }
     
 }
