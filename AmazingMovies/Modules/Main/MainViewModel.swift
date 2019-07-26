@@ -11,6 +11,7 @@ import Foundation
 protocol MainViewModelDelegate: class {
     func appendMovies(movies: [FetchTrendingMoviesResponse.Movie])
     func setLayoutMode(mode: LayoutMode)
+    func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie)
 }
 
 enum LayoutMode {
@@ -41,6 +42,10 @@ class MainViewModel {
     
     func onGridButtonTapped() {
         delegate?.setLayoutMode(mode: .grid)
+    }
+    
+    func onDidSelect(movie: FetchTrendingMoviesResponse.Movie) {
+        delegate?.showMovieDetails(movie: movie)
     }
     
 }

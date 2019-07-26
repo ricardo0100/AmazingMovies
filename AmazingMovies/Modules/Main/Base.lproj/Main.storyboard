@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q7k-ai-k7C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Main Collection View Controller-->
         <scene sceneID="YMl-Tc-fOG">
             <objects>
-                <collectionViewController id="yew-NJ-pFq" customClass="MainViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MainCollectionViewController" id="yew-NJ-pFq" customClass="MainCollectionViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jZo-4A-E2b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,15 +53,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="380" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ff-Ju-lxV">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ff-Ju-lxV">
                                             <rect key="frame" x="0.0" y="0.0" width="94.5" height="140"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="9Ff-Ju-lxV" secondAttribute="height" multiplier="27:40" id="zSL-tp-Siq"/>
+                                                <constraint firstAttribute="width" secondItem="9Ff-Ju-lxV" secondAttribute="height" multiplier="27:40" id="t3u-IZ-2gr"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spider-Man: Far From Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYn-Pe-WAK">
-                                            <rect key="frame" x="102.5" y="8" width="261.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Spider-Man: Far From Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYn-Pe-WAK">
+                                            <rect key="frame" x="102.5" y="8" width="230" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -73,7 +73,6 @@
                                     <constraint firstItem="9Ff-Ju-lxV" firstAttribute="top" secondItem="QEd-tU-dvI" secondAttribute="top" id="VaA-Ha-OQ7"/>
                                     <constraint firstItem="JYn-Pe-WAK" firstAttribute="top" secondItem="QEd-tU-dvI" secondAttribute="topMargin" id="aH6-Yv-PP5"/>
                                     <constraint firstItem="JYn-Pe-WAK" firstAttribute="leading" secondItem="9Ff-Ju-lxV" secondAttribute="trailing" constant="8" id="yLN-MZ-PPj"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="JYn-Pe-WAK" secondAttribute="trailing" constant="8" id="ytm-uC-aIE"/>
                                 </constraints>
                                 <size key="customSize" width="380" height="140"/>
                                 <connections>
@@ -88,36 +87,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="zu2-KG-ard">
-                        <barButtonItem key="leftBarButtonItem" image="view_list" id="N6W-Qh-Prm">
-                            <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="search" id="SYp-4n-V6Y">
-                            <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="view_list" id="N6W-Qh-Prm"/>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="SYp-4n-V6Y"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8f-Ud-8Nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="942.02898550724649" y="-654.24107142857144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tDd-uy-8nE">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7k-ai-k7C" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EnM-vg-Xf2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yew-NJ-pFq" kind="relationship" relationship="rootViewController" id="1bT-Mc-87t"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ce-xa-cyf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="-653.57142857142856"/>
         </scene>
     </scenes>
     <resources>

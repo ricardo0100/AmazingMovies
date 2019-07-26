@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MainCollectionViewController.swift
 //  AmazingMovies
 //
 //  Created by Ricardo Gehrke Filho on 23/07/19.
@@ -8,16 +8,21 @@
 
 import UIKit
 
-class MainViewController: UICollectionViewController {
+class MainCollectionViewController: UICollectionViewController, IdentifierLoadable {
 
-    private var viewModel: MainViewModel!
+    static func newInstance() -> UIViewController {
+        let viewController = UIStoryboard.loadViewController() as MainCollectionViewController
+        viewController.viewModel = MainViewModel(delegate: viewController, apiManager: APIManagerImplementation())
+        return UINavigationController(rootViewController: viewController)
+    }
+    
+    private var viewModel: MainViewModel?
     private var moviesDataSource: [FetchTrendingMoviesResponse.Movie] = []
     private var selectedMode: LayoutMode = .grid
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MainViewModel(delegate: self, apiManager: APIManagerImplementation())
-        viewModel.onViewDidLoad()
+        viewModel?.onViewDidLoad()
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -27,6 +32,11 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = selectedMode == .list ? movieCell(for: indexPath) : posterCell(for: indexPath)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = moviesDataSource[indexPath.item]
+        viewModel?.onDidSelect(movie: movie)
     }
     
     private func posterCell(for indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,7 +100,7 @@ class MainViewController: UICollectionViewController {
     
 }
 
-extension MainViewController: MainViewModelDelegate {
+extension MainCollectionViewController: MainViewModelDelegate {
     
     func appendMovies(movies: [FetchTrendingMoviesResponse.Movie]) {
         moviesDataSource.append(contentsOf: movies)
@@ -112,5 +122,10 @@ extension MainViewController: MainViewModelDelegate {
         } else {
             setListFlowLayout()
         }
+    }
+    
+    func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie) {
+        let detailsViewController = DetailsViewController.newInstance(movie: movie)
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
