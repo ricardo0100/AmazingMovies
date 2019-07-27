@@ -31,13 +31,13 @@ struct Movie: Codable {
     
     var posterURL: URL? {
         guard let path = posterPath else { return nil }
-        let url = URL(string: "https://image.tmdb.org/t/p/w500" + path)
+        let url = URL(string: Constants.imageBaseUrl + path)
         return url
     }
     
     var backdropURL: URL? {
         guard let path = backdropPath else { return nil }
-        let url = URL(string: "https://image.tmdb.org/t/p/w500" + path)
+        let url = URL(string: Constants.imageBaseUrl + path)
         return url
     }
     

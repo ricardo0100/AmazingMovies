@@ -11,9 +11,6 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
     
-    static let baseURL = "https://api.themoviedb.org/3"
-    static let apiKey = "1f54bd990f1cdfb230adb312546d765d"
-    
     case Genres
     case Trending(page: Int)
     case Search(query: String, page: Int)
@@ -48,13 +45,13 @@ enum APIRouter: URLRequestConvertible {
     }
     
     func asURLRequest() throws -> URLRequest {
-        let url = try APIRouter.baseURL.asURL()
+        let url = try Constants.apiBaseUrl.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
         var parameters = self.parameters
-        parameters["api_key"] = APIRouter.apiKey
+        parameters["api_key"] = Constants.apiToken
         
         urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         
