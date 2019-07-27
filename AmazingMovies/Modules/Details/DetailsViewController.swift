@@ -27,7 +27,17 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPosterButton()
         viewModel?.onViewDidLoad()
+    }
+    
+    private func setupPosterButton() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPosterButton))
+        posterImageView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func didTapPosterButton() {
+        viewModel?.onPosterTapped()
     }
     
 }
@@ -51,6 +61,11 @@ extension DetailsViewController: DetailsViewModelDelegate {
             return
         }
         releaseLabel.text = date.toString(with: "yyyy")
+    }
+    
+    func showZoomForImage(in url: URL) {
+        let zoomViewController = ZoomViewController.newInstance(url: url)
+        navigationController?.pushViewController(zoomViewController, animated: true)
     }
     
 }

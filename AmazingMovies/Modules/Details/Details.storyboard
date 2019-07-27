@@ -30,7 +30,7 @@
                                                     <constraint firstAttribute="width" secondItem="26d-fz-9mn" secondAttribute="height" multiplier="500/281" id="BZk-Qy-4wh"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="957-gM-R0c">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="957-gM-R0c">
                                                 <rect key="frame" x="8" y="172.5" width="140" height="207.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="YDG-Kj-vr6"/>
@@ -56,14 +56,20 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zoom" translatesAutoresizingMaskIntoConstraints="NO" id="4gc-ml-dTm">
+                                                <rect key="frame" x="116" y="348" width="24" height="24"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="-60" id="AYe-gv-GXA"/>
                                             <constraint firstItem="ZXY-zG-2Jk" firstAttribute="trailing" secondItem="957-gM-R0c" secondAttribute="trailing" id="BNg-kH-0Lm"/>
                                             <constraint firstAttribute="trailing" secondItem="26d-fz-9mn" secondAttribute="trailing" id="CpB-91-cKZ"/>
+                                            <constraint firstItem="957-gM-R0c" firstAttribute="trailing" secondItem="4gc-ml-dTm" secondAttribute="trailing" constant="8" id="HqD-dn-qxh"/>
                                             <constraint firstItem="XOl-kg-HEL" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="16" id="KqM-yb-FqB"/>
                                             <constraint firstItem="dU9-Vb-EEd" firstAttribute="leading" secondItem="ZXY-zG-2Jk" secondAttribute="leading" id="MOm-G7-rNq"/>
+                                            <constraint firstItem="957-gM-R0c" firstAttribute="bottom" secondItem="4gc-ml-dTm" secondAttribute="bottom" constant="8" id="Poe-bE-1Cc"/>
                                             <constraint firstItem="26d-fz-9mn" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" id="S6h-mt-67T"/>
                                             <constraint firstAttribute="trailing" secondItem="XOl-kg-HEL" secondAttribute="trailing" constant="8" id="T8o-rV-eT6"/>
                                             <constraint firstItem="XOl-kg-HEL" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="UvP-e0-SjV"/>
@@ -108,4 +114,7 @@
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="zoom" width="24" height="24"/>
+    </resources>
 </document>

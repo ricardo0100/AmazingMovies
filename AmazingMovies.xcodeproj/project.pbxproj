@@ -17,6 +17,8 @@
 		CF72FF0722EBEE420072D55E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0622EBEE420072D55E /* String+Extension.swift */; };
 		CF72FF0922EBEF1C0072D55E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0822EBEF1C0072D55E /* Constants.swift */; };
 		CF72FF0B22EBEFEE0072D55E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */; };
+		CF72FF0E22EC6A2E0072D55E /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0D22EC6A2E0072D55E /* ZoomViewController.swift */; };
+		CF72FF1022EC71B50072D55E /* Zoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF72FF0F22EC71B50072D55E /* Zoom.storyboard */; };
 		CFCD13B022E7AF0C0033549D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD13AF22E7AF0C0033549D /* AppDelegate.swift */; };
 		CFCD13B222E7AF0C0033549D /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD13B122E7AF0C0033549D /* MainCollectionViewController.swift */; };
 		CFCD13B522E7AF0C0033549D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCD13B322E7AF0C0033549D /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		CF72FF0622EBEE420072D55E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF72FF0822EBEF1C0072D55E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		CF72FF0D22EC6A2E0072D55E /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
+		CF72FF0F22EC71B50072D55E /* Zoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoom.storyboard; sourceTree = "<group>"; };
 		CFCD13AC22E7AF0C0033549D /* AmazingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD13AF22E7AF0C0033549D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFCD13B122E7AF0C0033549D /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 				CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF72FF1122EC794E0072D55E /* ZoomViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF72FF0D22EC6A2E0072D55E /* ZoomViewController.swift */,
+				CF72FF0F22EC71B50072D55E /* Zoom.storyboard */,
+			);
+			path = ZoomViewController;
 			sourceTree = "<group>";
 		};
 		CFCD13A322E7AF0C0033549D = {
@@ -198,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				CF72FF0C22EBF26D0072D55E /* Extensions */,
+				CF72FF1122EC794E0072D55E /* ZoomViewController */,
 				CF72FEFA22EB9CB20072D55E /* Throttler.swift */,
 				CF72FF0422EBE5A00072D55E /* GenresCache.swift */,
 				CF72FF0822EBEF1C0072D55E /* Constants.swift */,
@@ -274,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCD13BA22E7AF0D0033549D /* LaunchScreen.storyboard in Resources */,
+				CF72FF1022EC71B50072D55E /* Zoom.storyboard in Resources */,
 				CFCD13B722E7AF0D0033549D /* Assets.xcassets in Resources */,
 				CFCD13B522E7AF0C0033549D /* Main.storyboard in Resources */,
 				CFE1803D22EB497F00DFE1D8 /* Details.storyboard in Resources */,
@@ -323,6 +338,7 @@
 				CFCD13C622E7CF580033549D /* MainViewModel.swift in Sources */,
 				CFE1804122EB49BF00DFE1D8 /* DetailsViewModel.swift in Sources */,
 				CF72FF0322EBE47A0072D55E /* Genre.swift in Sources */,
+				CF72FF0E22EC6A2E0072D55E /* ZoomViewController.swift in Sources */,
 				CF72FEFD22EBE1FF0072D55E /* Movie.swift in Sources */,
 				CFE1804622EB4AEB00DFE1D8 /* UIStoryboard+IdentifierLoadable.swift in Sources */,
 				CF72FF0722EBEE420072D55E /* String+Extension.swift in Sources */,
