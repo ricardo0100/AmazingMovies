@@ -18,3 +18,5 @@
 ## Dependencies
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) for API requests
+- [Kingfisher](https://github.com/onevcat/Kingfishere) for images loading and caching
+- [SwiftLint](https://github.com/realm/SwiftLint) to keep the code style in good shape
