@@ -15,10 +15,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var overviewLabel: UILabel!
+    @IBOutlet private weak var releaseLabel: UILabel!
     
     func update(with movie: Movie) {
         imageView.kf.setImage(with: movie.posterURL)
         titleLabel.text = movie.title
+        overviewLabel.text = movie.overview
+        let releaseYear = movie.releaseDate.asDate(with: Constants.apiDateFormat)?.toString(with: "yyyy")
+        releaseLabel.text = releaseYear
     }
     
 }

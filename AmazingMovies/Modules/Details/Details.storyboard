@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09K-om-Umx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="481.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="26d-fz-9mn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="232.5"/>
@@ -38,7 +38,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOl-kg-HEL">
-                                                <rect key="frame" x="156" y="248.5" width="250" height="207.5"/>
+                                                <rect key="frame" x="156" y="248.5" width="250" height="153"/>
                                                 <string key="text">Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,8 +71,7 @@
                                             <constraint firstItem="dU9-Vb-EEd" firstAttribute="top" secondItem="ZXY-zG-2Jk" secondAttribute="bottom" constant="8" id="knT-7w-IcD"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" constant="8" id="oyI-sQ-Vri"/>
                                             <constraint firstItem="ZXY-zG-2Jk" firstAttribute="top" secondItem="957-gM-R0c" secondAttribute="bottom" constant="8" id="pXQ-r4-D06"/>
-                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="height" relation="greaterThanOrEqual" secondItem="957-gM-R0c" secondAttribute="height" id="vs1-o4-EKQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="24" id="xFL-Ze-Thw"/>
+                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="80" id="xFL-Ze-Thw"/>
                                             <constraint firstItem="ZXY-zG-2Jk" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="leading" id="zoo-fd-QIj"/>
                                         </constraints>
                                     </view>

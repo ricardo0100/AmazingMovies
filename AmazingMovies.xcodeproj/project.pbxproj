@@ -84,6 +84,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF72FF0C22EBF26D0072D55E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFE1804522EB4AEB00DFE1D8 /* UIStoryboard+IdentifierLoadable.swift */,
+				CF72FF0622EBEE420072D55E /* String+Extension.swift */,
+				CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CFCD13A322E7AF0C0033549D = {
 			isa = PBXGroup;
 			children = (
@@ -187,12 +197,10 @@
 		CFE1804222EB4A6400DFE1D8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CFE1804522EB4AEB00DFE1D8 /* UIStoryboard+IdentifierLoadable.swift */,
+				CF72FF0C22EBF26D0072D55E /* Extensions */,
 				CF72FEFA22EB9CB20072D55E /* Throttler.swift */,
 				CF72FF0422EBE5A00072D55E /* GenresCache.swift */,
-				CF72FF0622EBEE420072D55E /* String+Extension.swift */,
 				CF72FF0822EBEF1C0072D55E /* Constants.swift */,
-				CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
