@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09K-om-Umx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="481.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="507.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="26d-fz-9mn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="232.5"/>
@@ -38,20 +38,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOl-kg-HEL">
-                                                <rect key="frame" x="156" y="248.5" width="250" height="153"/>
+                                                <rect key="frame" x="8" y="388" width="398" height="95.5"/>
                                                 <string key="text">Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comedy, Drama, Terror, Sci-Fi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-zG-2Jk">
-                                                <rect key="frame" x="8" y="388" width="140" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU9-Vb-EEd">
-                                                <rect key="frame" x="8" y="425" width="30" height="15"/>
+                                                <rect key="frame" x="156" y="282.5" width="30" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -60,25 +54,40 @@
                                                 <rect key="frame" x="116" y="348" width="24" height="24"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spider-Man The Amazing Movie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-qY-ymf">
+                                                <rect key="frame" x="156" y="240.5" width="250" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comedy, Drama, Terror, Sci-Fi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-zG-2Jk">
+                                                <rect key="frame" x="156" y="264" width="250" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" constant="8" id="7VL-3r-jwe"/>
+                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="24" id="9eV-mT-1Mh"/>
+                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="top" secondItem="ZXY-zG-2Jk" secondAttribute="bottom" constant="4" id="9vO-Xy-WJQ"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="-60" id="AYe-gv-GXA"/>
-                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="trailing" secondItem="957-gM-R0c" secondAttribute="trailing" id="BNg-kH-0Lm"/>
                                             <constraint firstAttribute="trailing" secondItem="26d-fz-9mn" secondAttribute="trailing" id="CpB-91-cKZ"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="trailing" secondItem="4gc-ml-dTm" secondAttribute="trailing" constant="8" id="HqD-dn-qxh"/>
-                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="16" id="KqM-yb-FqB"/>
-                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="leading" secondItem="ZXY-zG-2Jk" secondAttribute="leading" id="MOm-G7-rNq"/>
+                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="top" secondItem="957-gM-R0c" secondAttribute="bottom" constant="8" id="HuR-6Z-RYP"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="bottom" secondItem="4gc-ml-dTm" secondAttribute="bottom" constant="8" id="Poe-bE-1Cc"/>
                                             <constraint firstItem="26d-fz-9mn" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" id="S6h-mt-67T"/>
-                                            <constraint firstAttribute="trailing" secondItem="XOl-kg-HEL" secondAttribute="trailing" constant="8" id="T8o-rV-eT6"/>
-                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="UvP-e0-SjV"/>
                                             <constraint firstItem="26d-fz-9mn" firstAttribute="top" secondItem="09K-om-Umx" secondAttribute="top" id="VJL-ln-JlG"/>
-                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="top" secondItem="ZXY-zG-2Jk" secondAttribute="bottom" constant="8" id="knT-7w-IcD"/>
+                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="Zpn-0b-Xjw"/>
+                                            <constraint firstItem="Oc6-qY-ymf" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="etF-hY-gkb"/>
+                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="top" secondItem="Oc6-qY-ymf" secondAttribute="bottom" constant="4" id="goj-Pq-Ofd"/>
+                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="iJw-WQ-nim"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" constant="8" id="oyI-sQ-Vri"/>
-                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="top" secondItem="957-gM-R0c" secondAttribute="bottom" constant="8" id="pXQ-r4-D06"/>
-                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="80" id="xFL-Ze-Thw"/>
-                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="leading" id="zoo-fd-QIj"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZXY-zG-2Jk" secondAttribute="trailing" constant="8" id="pst-97-Qyx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Oc6-qY-ymf" secondAttribute="trailing" constant="8" id="wB6-Yd-b5u"/>
+                                            <constraint firstAttribute="trailing" secondItem="XOl-kg-HEL" secondAttribute="trailing" constant="8" id="yKb-ee-brc"/>
+                                            <constraint firstItem="Oc6-qY-ymf" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="8" id="zKN-rA-JtL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -107,6 +116,8 @@
                         <outlet property="overviewLabel" destination="XOl-kg-HEL" id="JaH-vo-BKs"/>
                         <outlet property="posterImageView" destination="957-gM-R0c" id="KnM-sd-34p"/>
                         <outlet property="releaseLabel" destination="dU9-Vb-EEd" id="woi-ve-vLP"/>
+                        <outlet property="titleLabel" destination="Oc6-qY-ymf" id="zAB-FG-Ig1"/>
+                        <outlet property="zoomIconImageView" destination="4gc-ml-dTm" id="SWA-nv-4cD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOB-NX-n2t" userLabel="First Responder" sceneMemberID="firstResponder"/>

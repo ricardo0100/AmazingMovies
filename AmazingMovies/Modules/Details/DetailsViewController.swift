@@ -16,6 +16,8 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     @IBOutlet private weak var overviewLabel: UILabel!
     @IBOutlet private weak var genresLabel: UILabel!
     @IBOutlet private weak var releaseLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var zoomIconImageView: UIImageView!
     
     private var viewModel: DetailsViewModel?
     
@@ -34,6 +36,7 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     private func setupPosterButton() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPosterButton))
         posterImageView.addGestureRecognizer(tap)
+        zoomIconImageView.tintColor = .white
     }
     
     @objc private func didTapPosterButton() {
@@ -45,7 +48,7 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
 extension DetailsViewController: DetailsViewModelDelegate {
     
     func update(with movie: Movie) {
-        title = movie.title
+        titleLabel.text = movie.title
         backdropImageView.kf.setImage(with: movie.backdropURL)
         posterImageView.kf.setImage(with: movie.posterURL)
         overviewLabel.text = movie.overview
