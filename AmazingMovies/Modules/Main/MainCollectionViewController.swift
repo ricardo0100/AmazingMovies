@@ -174,4 +174,8 @@ extension MainCollectionViewController: MainViewModelDelegate {
     func showError(message: String) {
         showAlert(title: "ERROR_TITLE".localized(), message: message)
     }
+    
+    func activityIndicator(isShowing: Bool) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = isShowing
+    }
 }

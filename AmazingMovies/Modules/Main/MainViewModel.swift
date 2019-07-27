@@ -13,6 +13,7 @@ protocol MainViewModelDelegate: class {
     func setLayoutMode(mode: LayoutMode)
     func showMovieDetails(movie: Movie)
     func showError(message: String)
+    func activityIndicator(isShowing: Bool)
 }
 
 enum LayoutMode: Int {
@@ -93,17 +94,23 @@ class MainViewModel {
     }
     
     private func loadNextTrendingMoviesPage() {
+        delegate?.activityIndicator(isShowing: true)
         apiManager.fetchUpcomingMovies(page: nextPage, completion: { [weak self] movies in
+            self?.delegate?.activityIndicator(isShowing: false)
             self?.handleResults(movies: movies)
             }, onError: { [weak self] _ in
+                self?.delegate?.activityIndicator(isShowing: false)
                 self?.delegate?.showError(message: "FETCH_TRENDING_ERROR".localized())
             })
     }
     
     private func loadNextSearchPage() {
+        delegate?.activityIndicator(isShowing: true)
         apiManager.searchMovies(query: queryText, page: nextPage, completion: { [weak self] movies in
+            self?.delegate?.activityIndicator(isShowing: false)
             self?.handleResults(movies: movies)
             }, onError: { [weak self] _ in
+                self?.delegate?.activityIndicator(isShowing: false)
                 self?.delegate?.showError(message: "SEARCH_ERROR".localized())
             })
     }
