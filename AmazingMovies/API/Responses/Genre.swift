@@ -11,4 +11,9 @@ import Foundation
 class Genre: Codable {
     let genreId: Int
     let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case genreId = "id"
+        case name
+    }
 }
