@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Collection View Controller-->
+        <!--Upcoming-->
         <scene sceneID="YMl-Tc-fOG">
             <objects>
                 <collectionViewController storyboardIdentifier="MainCollectionViewController" definesPresentationContext="YES" id="yew-NJ-pFq" customClass="MainCollectionViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="yew-NJ-pFq" id="7ny-zr-rSj"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="zu2-KG-ard">
+                    <navigationItem key="navigationItem" title="Upcoming" id="zu2-KG-ard">
                         <barButtonItem key="leftBarButtonItem" image="view_list" id="N6W-Qh-Prm"/>
                         <barButtonItem key="rightBarButtonItem" image="search" id="SYp-4n-V6Y"/>
                     </navigationItem>

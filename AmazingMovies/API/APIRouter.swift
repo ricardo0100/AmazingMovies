@@ -12,12 +12,12 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     
     case genres
-    case trending(page: Int)
+    case upcoming(page: Int)
     case search(query: String, page: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .genres, .trending, .search:
+        case .genres, .upcoming, .search:
             return .get
         }
     }
@@ -26,8 +26,8 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .genres:
             return "/genre/movie/list"
-        case .trending:
-            return "/trending/movie/day"
+        case .upcoming:
+            return "/discover/movie"
         case .search:
             return "/search/movie"
         }
@@ -37,10 +37,16 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .genres:
             return [:]
-        case .trending(let page):
-            return ["page": page]
+        case .upcoming(let page):
+            let startDate = Date().toString(with: Constants.apiDateFormat)
+            let endDate = (Calendar.current.date(byAdding: .year, value: 1, to: Date()) ?? Date())
+                .toString(with: Constants.apiDateFormat)
+            return ["page": page,
+                    "primary_release_date.gte": startDate,
+                    "primary_release_date.lte": endDate]
         case .search(let query, let page):
-            return ["page": page, "query": query]
+            return ["page": page,
+                    "query": query]
         }
     }
     

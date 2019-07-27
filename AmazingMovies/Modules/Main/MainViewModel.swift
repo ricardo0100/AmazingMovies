@@ -93,7 +93,7 @@ class MainViewModel {
     }
     
     private func loadNextTrendingMoviesPage() {
-        apiManager.fetchTrendingMovies(page: nextPage, completion: { [weak self] movies in
+        apiManager.fetchUpcomingMovies(page: nextPage, completion: { [weak self] movies in
             self?.handleResults(movies: movies)
             }, onError: { [weak self] _ in
                 self?.delegate?.showError(message: "FETCH_TRENDING_ERROR".localized())

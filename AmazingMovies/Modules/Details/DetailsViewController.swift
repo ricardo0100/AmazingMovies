@@ -36,7 +36,10 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     private func setupPosterButton() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPosterButton))
         posterImageView.addGestureRecognizer(tap)
+        
+        zoomIconImageView.image = zoomIconImageView.image?.withRenderingMode(.alwaysTemplate)
         zoomIconImageView.tintColor = .white
+        zoomIconImageView.tintColorDidChange()
     }
     
     @objc private func didTapPosterButton() {
