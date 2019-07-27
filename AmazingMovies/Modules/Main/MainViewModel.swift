@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainViewModelDelegate: class {
-    func appendMovies(movies: [FetchTrendingMoviesResponse.Movie])
+    func updateList(with movies: [FetchTrendingMoviesResponse.Movie])
     func setLayoutMode(mode: LayoutMode)
     func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie)
 }
@@ -22,8 +22,11 @@ class MainViewModel {
     
     private let apiManager: APIManager
     private weak var delegate: MainViewModelDelegate?
-    private var page = 1
+    private var nextPage = 1
     private var isFetching = false
+    private let throttler = Throttler(minimumDelay: 0.3)
+    private var queryText: String = ""
+    private var moviesList: [FetchTrendingMoviesResponse.Movie] = []
     
     init(delegate: MainViewModelDelegate, apiManager: APIManager) {
         self.delegate = delegate
@@ -33,10 +36,8 @@ class MainViewModel {
     func onViewDidLoad() {
         delegate?.setLayoutMode(mode: .grid)
         isFetching = true
-        apiManager.fetchTrendingMovies(page: page) { [weak self] movies in
-            self?.isFetching = false
-            self?.page += 1
-            self?.delegate?.appendMovies(movies: movies)
+        apiManager.fetchTrendingMovies(page: nextPage) { [weak self] movies in
+            self?.handleResults(movies: movies)
         }
     }
     
@@ -55,11 +56,47 @@ class MainViewModel {
     func onDidScrollToBottom() {
         if isFetching { return }
         isFetching = true
-        apiManager.fetchTrendingMovies(page: page) { [weak self] movies in
-            self?.isFetching = false
-            self?.page += 1
-            self?.delegate?.appendMovies(movies: movies)
+        if queryText.isEmpty {
+            loadNextTrendingMoviesPage()
+        } else {
+            loadNextSearchPage()
         }
+    }
+    
+    func onSearchTextChanged(text: String) {
+        throttler.throttle { [weak self] in
+            self?.queryText = text
+            self?.nextPage = 1
+            self?.loadNextSearchPage()
+        }
+    }
+    
+    func onSearchCanceled() {
+        queryText = ""
+        nextPage = 1
+        loadNextTrendingMoviesPage()
+    }
+    
+    private func loadNextTrendingMoviesPage() {
+        apiManager.fetchTrendingMovies(page: nextPage) { [weak self] movies in
+            self?.handleResults(movies: movies)
+        }
+    }
+    
+    private func loadNextSearchPage() {
+        apiManager.searchMovies(query: queryText, page: nextPage, completion: { [weak self] movies in
+            self?.handleResults(movies: movies)
+        })
+    }
+    
+    private func handleResults(movies: [FetchTrendingMoviesResponse.Movie]) {
+        isFetching = false
+        if nextPage == 1 {
+            moviesList.removeAll()
+        }
+        nextPage += 1
+        moviesList.append(contentsOf: movies)
+        delegate?.updateList(with: moviesList)
     }
     
 }

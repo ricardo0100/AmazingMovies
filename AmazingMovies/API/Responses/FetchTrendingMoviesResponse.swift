@@ -26,8 +26,8 @@ struct FetchTrendingMoviesResponse: Codable {
         let id: Int
         let title: String
         let overview: String
-        let posterPath: String
-        let backdropPath: String
+        let posterPath: String?
+        let backdropPath: String?
         let popularity: Float
         
         enum CodingKeys: String, CodingKey {
@@ -40,12 +40,14 @@ struct FetchTrendingMoviesResponse: Codable {
         }
         
         var posterURL: URL? {
-            let url = URL(string: "https://image.tmdb.org/t/p/w500" + posterPath)
+            guard let path = posterPath else { return nil }
+            let url = URL(string: "https://image.tmdb.org/t/p/w500" + path)
             return url
         }
         
         var backdropURL: URL? {
-            let url = URL(string: "https://image.tmdb.org/t/p/w500" + backdropPath)
+            guard let path = backdropPath else { return nil }
+            let url = URL(string: "https://image.tmdb.org/t/p/w500" + path)
             return url
         }
         

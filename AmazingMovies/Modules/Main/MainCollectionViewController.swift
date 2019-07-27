@@ -22,14 +22,20 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     private var viewModel: MainViewModel?
     private var moviesDataSource: [FetchTrendingMoviesResponse.Movie] = []
     private var selectedMode: LayoutMode = .grid
+
+    private lazy var searchController: UISearchController = {
+        var search = UISearchController(searchResultsController: nil)
+        search.searchBar.delegate = self
+        search.delegate = self
+        self.navigationItem.searchController = search
+        return search
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchButton()
+        navigationItem.searchController = searchController
         viewModel?.onViewDidLoad()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,6 +64,14 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
         let movie = moviesDataSource[indexPath.item]
         cell.update(with: movie)
         return cell
+    }
+    
+    private func setupSearchButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "search"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapSearchButton))
     }
     
     @objc private func setGridFlowLayout() {
@@ -98,6 +112,10 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
         viewModel?.onGridButtonTapped()
     }
     
+    @objc private func didTapSearchButton() {
+        searchController.isActive = true
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (bottomEdge >= scrollView.contentSize.height) {
@@ -107,18 +125,27 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     
 }
 
+extension MainCollectionViewController: UISearchBarDelegate, UISearchControllerDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.onSearchTextChanged(text: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel?.onSearchCanceled()
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        viewModel?.onSearchCanceled()
+    }
+    
+}
+
 extension MainCollectionViewController: MainViewModelDelegate {
     
-    func appendMovies(movies: [FetchTrendingMoviesResponse.Movie]) {
-        moviesDataSource.append(contentsOf: movies)
+    func updateList(with movies: [FetchTrendingMoviesResponse.Movie]) {
+        moviesDataSource = movies
         collectionView.reloadData()
-//        let nextIndex = moviesDataSource.count
-//        moviesDataSource.append(contentsOf: movies)
-//        collectionView.performBatchUpdates({
-//            collectionView.insertItems(at: )
-//        }) { (completed) in
-//
-//        }
     }
     
     func setLayoutMode(mode: LayoutMode) {

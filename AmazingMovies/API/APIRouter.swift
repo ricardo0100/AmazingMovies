@@ -15,10 +15,11 @@ enum APIRouter: URLRequestConvertible {
     static let apiKey = "1f54bd990f1cdfb230adb312546d765d"
     
     case Trending(page: Int)
+    case Search(query: String, page: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .Trending:
+        case .Trending, .Search:
             return .get
         }
     }
@@ -27,6 +28,8 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .Trending:
             return "/trending/movie/day"
+        case .Search:
+            return "/search/movie"
         }
     }
     
@@ -34,6 +37,8 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .Trending(let page):
             return ["page": page]
+        case .Search(let query, let page):
+            return ["page": page, "query": query]
         }
     }
     
@@ -46,10 +51,7 @@ enum APIRouter: URLRequestConvertible {
         var parameters = self.parameters
         parameters["api_key"] = APIRouter.apiKey
         
-        switch self {
-        case .Trending:
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-        }
+        urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         
         return urlRequest
     }
