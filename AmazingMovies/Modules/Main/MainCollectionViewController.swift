@@ -20,7 +20,7 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     }
     
     private var viewModel: MainViewModel?
-    private var moviesDataSource: [FetchTrendingMoviesResponse.Movie] = []
+    private var moviesDataSource: [Movie] = []
     private var selectedMode: LayoutMode = .grid
 
     private lazy var searchController: UISearchController = {
@@ -139,7 +139,7 @@ extension MainCollectionViewController: UISearchBarDelegate, UISearchControllerD
 }
 
 extension MainCollectionViewController: MainViewModelDelegate {
-    func updateList(with movies: [FetchTrendingMoviesResponse.Movie], scrollToTop: Bool) {
+    func updateList(with movies: [Movie], scrollToTop: Bool) {
         moviesDataSource = movies
         collectionView.reloadData()
         if scrollToTop {
@@ -157,7 +157,7 @@ extension MainCollectionViewController: MainViewModelDelegate {
         }
     }
     
-    func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie) {
+    func showMovieDetails(movie: Movie) {
         let detailsViewController = DetailsViewController.newInstance(movie: movie)
         navigationController?.pushViewController(detailsViewController, animated: true)
     }

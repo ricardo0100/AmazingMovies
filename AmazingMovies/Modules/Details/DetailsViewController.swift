@@ -17,7 +17,7 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     
     private var viewModel: DetailsViewModel?
     
-    static func newInstance(movie: FetchTrendingMoviesResponse.Movie) -> DetailsViewController {
+    static func newInstance(movie: Movie) -> DetailsViewController {
         let viewController = UIStoryboard.loadViewController() as DetailsViewController
         viewController.viewModel = DetailsViewModel(delegate: viewController, movie: movie)
         return viewController
@@ -32,7 +32,7 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
 
 extension DetailsViewController: DetailsViewModelDelegate {
     
-    func update(with movie: FetchTrendingMoviesResponse.Movie) {
+    func update(with movie: Movie) {
         title = movie.title
         backdropImageView.kf.setImage(with: movie.backdropURL)
         posterImageView.kf.setImage(with: movie.posterURL)

@@ -16,7 +16,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     
-    func update(with movie: FetchTrendingMoviesResponse.Movie) {
+    func update(with movie: Movie) {
         imageView.kf.setImage(with: movie.posterURL)
         titleLabel.text = movie.title
     }

@@ -15,7 +15,7 @@ class PosterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
     
-    func update(with movie: FetchTrendingMoviesResponse.Movie) {
+    func update(with movie: Movie) {
         imageView.kf.setImage(with: movie.posterURL)
     }
     

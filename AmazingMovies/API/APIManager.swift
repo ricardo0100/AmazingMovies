@@ -10,15 +10,15 @@ import Foundation
 import Alamofire
 
 protocol APIManager {
-    func fetchTrendingMovies(page: Int, completion: @escaping ([FetchTrendingMoviesResponse.Movie]) -> Void)
-    func searchMovies(query: String, page: Int, completion: @escaping ([FetchTrendingMoviesResponse.Movie]) -> Void)
+    func fetchTrendingMovies(page: Int, completion: @escaping ([Movie]) -> Void)
+    func searchMovies(query: String, page: Int, completion: @escaping ([Movie]) -> Void)
 }
 
 struct APIManagerImplementation: APIManager {
     
-    func fetchTrendingMovies(page: Int, completion: @escaping ([FetchTrendingMoviesResponse.Movie]) -> Void) {
+    func fetchTrendingMovies(page: Int, completion: @escaping ([Movie]) -> Void) {
         AF.request(APIRouter.Trending(page: page))
-            .responseDecodable { (response: DataResponse<FetchTrendingMoviesResponse>) in
+            .responseDecodable { (response: DataResponse<MoviesListResponse>) in
                 if let error = response.error {
                     print("Error fetching trending movies: \(error)")
                 }
@@ -30,9 +30,9 @@ struct APIManagerImplementation: APIManager {
         }
     }
     
-    func searchMovies(query: String, page: Int, completion: @escaping ([FetchTrendingMoviesResponse.Movie]) -> Void) {
+    func searchMovies(query: String, page: Int, completion: @escaping ([Movie]) -> Void) {
         AF.request(APIRouter.Search(query: query, page: page))
-            .responseDecodable { (response: DataResponse<FetchTrendingMoviesResponse>) in
+            .responseDecodable { (response: DataResponse<MoviesListResponse>) in
                 if let error = response.error {
                     print("Error fetching trending movies: \(error)")
                 }

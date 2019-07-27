@@ -9,15 +9,15 @@
 import Foundation
 
 protocol DetailsViewModelDelegate: class {
-    func update(with movie: FetchTrendingMoviesResponse.Movie)
+    func update(with movie: Movie)
 }
 
 class DetailsViewModel {
     
     private let delegate: DetailsViewModelDelegate
-    private let movie: FetchTrendingMoviesResponse.Movie
+    private let movie: Movie
     
-    init(delegate: DetailsViewModelDelegate, movie: FetchTrendingMoviesResponse.Movie) {
+    init(delegate: DetailsViewModelDelegate, movie: Movie) {
         self.delegate = delegate
         self.movie = movie
     }

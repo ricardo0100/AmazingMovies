@@ -9,9 +9,9 @@
 import Foundation
 
 protocol MainViewModelDelegate: class {
-    func updateList(with movies: [FetchTrendingMoviesResponse.Movie], scrollToTop: Bool)
+    func updateList(with movies: [Movie], scrollToTop: Bool)
     func setLayoutMode(mode: LayoutMode)
-    func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie)
+    func showMovieDetails(movie: Movie)
 }
 
 enum LayoutMode {
@@ -26,7 +26,7 @@ class MainViewModel {
     private var isFetching = false
     private let throttler = Throttler(minimumDelay: 0.3)
     private var queryText: String = ""
-    private var moviesList: [FetchTrendingMoviesResponse.Movie] = []
+    private var moviesList: [Movie] = []
     
     init(delegate: MainViewModelDelegate, apiManager: APIManager) {
         self.delegate = delegate
@@ -49,7 +49,7 @@ class MainViewModel {
         delegate?.setLayoutMode(mode: .grid)
     }
     
-    func onDidSelect(movie: FetchTrendingMoviesResponse.Movie) {
+    func onDidSelect(movie: Movie) {
         delegate?.showMovieDetails(movie: movie)
     }
     
@@ -89,7 +89,7 @@ class MainViewModel {
         })
     }
     
-    private func handleResults(movies: [FetchTrendingMoviesResponse.Movie]) {
+    private func handleResults(movies: [Movie]) {
         isFetching = false
         if nextPage == 1 {
             moviesList.removeAll()
