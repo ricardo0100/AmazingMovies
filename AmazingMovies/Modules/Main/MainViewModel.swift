@@ -12,6 +12,7 @@ protocol MainViewModelDelegate: class {
     func updateList(with movies: [Movie], scrollToTop: Bool)
     func setLayoutMode(mode: LayoutMode)
     func showMovieDetails(movie: Movie)
+    func showError(message: String)
 }
 
 enum LayoutMode: Int {
@@ -91,15 +92,19 @@ class MainViewModel {
     }
     
     private func loadNextTrendingMoviesPage() {
-        apiManager.fetchTrendingMovies(page: nextPage) { [weak self] movies in
+        apiManager.fetchTrendingMovies(page: nextPage, completion: { [weak self] movies in
             self?.handleResults(movies: movies)
-        }
+            }, onError: { [weak self] error in
+                self?.delegate?.showError(message: "FETCH_TRENDING_ERROR".localized())
+            })
     }
     
     private func loadNextSearchPage() {
         apiManager.searchMovies(query: queryText, page: nextPage, completion: { [weak self] movies in
             self?.handleResults(movies: movies)
-        })
+            }, onError: { [weak self] error in
+                self?.delegate?.showError(message: "SEARCH_ERROR".localized())
+            })
     }
     
     private func handleResults(movies: [Movie]) {

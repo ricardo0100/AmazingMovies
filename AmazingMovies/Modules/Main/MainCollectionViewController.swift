@@ -139,6 +139,7 @@ extension MainCollectionViewController: UISearchBarDelegate, UISearchControllerD
 }
 
 extension MainCollectionViewController: MainViewModelDelegate {
+    
     func updateList(with movies: [Movie], scrollToTop: Bool) {
         moviesDataSource = movies
         collectionView.reloadData()
@@ -160,5 +161,9 @@ extension MainCollectionViewController: MainViewModelDelegate {
     func showMovieDetails(movie: Movie) {
         let detailsViewController = DetailsViewController.newInstance(movie: movie)
         navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
+    func showError(message: String) {
+        showAlert(title: "ERROR_TITLE".localized(), message: message)
     }
 }

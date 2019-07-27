@@ -14,11 +14,13 @@
 		CF72FF0122EBE3790072D55E /* GenresListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0022EBE3790072D55E /* GenresListResponse.swift */; };
 		CF72FF0322EBE47A0072D55E /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0222EBE47A0072D55E /* Genre.swift */; };
 		CF72FF0522EBE5A00072D55E /* GenresCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0422EBE5A00072D55E /* GenresCache.swift */; };
-		CF72FF0722EBEE420072D55E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0622EBEE420072D55E /* String+Extension.swift */; };
 		CF72FF0922EBEF1C0072D55E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0822EBEF1C0072D55E /* Constants.swift */; };
 		CF72FF0B22EBEFEE0072D55E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */; };
 		CF72FF0E22EC6A2E0072D55E /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF0D22EC6A2E0072D55E /* ZoomViewController.swift */; };
 		CF72FF1022EC71B50072D55E /* Zoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF72FF0F22EC71B50072D55E /* Zoom.storyboard */; };
+		CF72FF1322EC7CFA0072D55E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF1222EC7CFA0072D55E /* UIViewController+Extensions.swift */; };
+		CF72FF1722EC7DC10072D55E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72FF1622EC7DC10072D55E /* String+Extensions.swift */; };
+		CF72FF1822EC7EF80072D55E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF72FF1A22EC7EF80072D55E /* Localizable.strings */; };
 		CFCD13B022E7AF0C0033549D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD13AF22E7AF0C0033549D /* AppDelegate.swift */; };
 		CFCD13B222E7AF0C0033549D /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD13B122E7AF0C0033549D /* MainCollectionViewController.swift */; };
 		CFCD13B522E7AF0C0033549D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCD13B322E7AF0C0033549D /* Main.storyboard */; };
@@ -44,17 +46,19 @@
 		CF72FF0022EBE3790072D55E /* GenresListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListResponse.swift; sourceTree = "<group>"; };
 		CF72FF0222EBE47A0072D55E /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		CF72FF0422EBE5A00072D55E /* GenresCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCache.swift; sourceTree = "<group>"; };
-		CF72FF0622EBEE420072D55E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF72FF0822EBEF1C0072D55E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CF72FF0D22EC6A2E0072D55E /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		CF72FF0F22EC71B50072D55E /* Zoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoom.storyboard; sourceTree = "<group>"; };
+		CF72FF1222EC7CFA0072D55E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CF72FF1622EC7DC10072D55E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CF72FF1922EC7EF80072D55E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF72FF1D22EC80BC0072D55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF72FF1E22EC80BC0072D55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFCD13AC22E7AF0C0033549D /* AmazingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD13AF22E7AF0C0033549D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFCD13B122E7AF0C0033549D /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		CFCD13B422E7AF0C0033549D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFCD13B622E7AF0D0033549D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CFCD13B922E7AF0D0033549D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFCD13BB22E7AF0D0033549D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFCD13C522E7CF580033549D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CFE1802B22E8B0D900DFE1D8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -92,8 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				CFE1804522EB4AEB00DFE1D8 /* UIStoryboard+IdentifierLoadable.swift */,
-				CF72FF0622EBEE420072D55E /* String+Extension.swift */,
 				CF72FF0A22EBEFEE0072D55E /* Date+Extension.swift */,
+				CF72FF1222EC7CFA0072D55E /* UIViewController+Extensions.swift */,
+				CF72FF1622EC7DC10072D55E /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				CFCD13B622E7AF0D0033549D /* Assets.xcassets */,
+				CF72FF1A22EC7EF80072D55E /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 				CFCD13B722E7AF0D0033549D /* Assets.xcassets in Resources */,
 				CFCD13B522E7AF0C0033549D /* Main.storyboard in Resources */,
 				CFE1803D22EB497F00DFE1D8 /* Details.storyboard in Resources */,
+				CF72FF1822EC7EF80072D55E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,11 +344,12 @@
 				CFCD13B022E7AF0C0033549D /* AppDelegate.swift in Sources */,
 				CFCD13C622E7CF580033549D /* MainViewModel.swift in Sources */,
 				CFE1804122EB49BF00DFE1D8 /* DetailsViewModel.swift in Sources */,
+				CF72FF1322EC7CFA0072D55E /* UIViewController+Extensions.swift in Sources */,
 				CF72FF0322EBE47A0072D55E /* Genre.swift in Sources */,
+				CF72FF1722EC7DC10072D55E /* String+Extensions.swift in Sources */,
 				CF72FF0E22EC6A2E0072D55E /* ZoomViewController.swift in Sources */,
 				CF72FEFD22EBE1FF0072D55E /* Movie.swift in Sources */,
 				CFE1804622EB4AEB00DFE1D8 /* UIStoryboard+IdentifierLoadable.swift in Sources */,
-				CF72FF0722EBEE420072D55E /* String+Extension.swift in Sources */,
 				CF72FEFB22EB9CB20072D55E /* Throttler.swift in Sources */,
 				CFE1803A22EB401700DFE1D8 /* MovieCollectionViewCell.swift in Sources */,
 				CF72FEFF22EBE2260072D55E /* MoviesListResponse.swift in Sources */,
@@ -353,10 +361,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CF72FF1A22EC7EF80072D55E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF72FF1922EC7EF80072D55E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CFCD13B322E7AF0C0033549D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CFCD13B422E7AF0C0033549D /* Base */,
+				CF72FF1E22EC80BC0072D55E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -364,7 +380,7 @@
 		CFCD13B822E7AF0D0033549D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CFCD13B922E7AF0D0033549D /* Base */,
+				CF72FF1D22EC80BC0072D55E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

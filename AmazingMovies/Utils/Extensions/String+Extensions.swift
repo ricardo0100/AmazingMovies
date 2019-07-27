@@ -1,8 +1,8 @@
 //
-//  DateUtils.swift
+//  String+Extensions.swift
 //  AmazingMovies
 //
-//  Created by Ricardo Gehrke Filho on 26/07/19.
+//  Created by Ricardo Gehrke Filho on 27/07/19.
 //  Copyright © 2019 Ricardo Gehrke Filho. All rights reserved.
 //
 
@@ -14,6 +14,10 @@ extension String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.date(from: self)
+    }
+    
+    func localized() -> String {
+        return NSLocalizedString(self, comment: self)
     }
     
 }
