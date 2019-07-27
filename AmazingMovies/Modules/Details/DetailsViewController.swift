@@ -66,7 +66,7 @@ extension DetailsViewController: DetailsViewModelDelegate {
             releaseLabel.text = nil
             return
         }
-        releaseLabel.text = date.toString(with: "yyyy")
+        releaseLabel.text = date.toDateString()
     }
     
     func showZoomForImage(in url: URL) {

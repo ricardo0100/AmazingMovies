@@ -24,13 +24,10 @@ struct APIManagerImplementation: APIManager {
                     print("Error fetching upcoming movies: \(error)")
                     onError?(error)
                 }
-                guard var movies = response.value?.results else {
+                guard let movies = response.value?.results else {
                     onError?(NSError(domain: "Error fetching upcoming movies", code: 0, userInfo: nil))
                     return
                 }
-                movies.sort(by: { (movie1, movie2) -> Bool in
-                    return movie1.popularity > movie2.popularity
-                })
                 completion(movies)
         }
     }
@@ -45,13 +42,10 @@ struct APIManagerImplementation: APIManager {
                     print("Error searching movies: \(error)")
                     onError?(error)
                 }
-                guard var movies = response.value?.results else {
+                guard let movies = response.value?.results else {
                     onError?(NSError(domain: "Error searching movies", code: 0, userInfo: nil))
                     return
                 }
-                movies.sort(by: { (movie1, movie2) -> Bool in
-                    return movie1.popularity > movie2.popularity
-                })
                 completion(movies)
         }
     }
