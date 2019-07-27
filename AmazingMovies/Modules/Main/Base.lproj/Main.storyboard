@@ -12,7 +12,7 @@
         <!--Main Collection View Controller-->
         <scene sceneID="YMl-Tc-fOG">
             <objects>
-                <collectionViewController storyboardIdentifier="MainCollectionViewController" id="yew-NJ-pFq" customClass="MainCollectionViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MainCollectionViewController" definesPresentationContext="YES" id="yew-NJ-pFq" customClass="MainCollectionViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="jZo-4A-E2b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

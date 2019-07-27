@@ -27,6 +27,7 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
         var search = UISearchController(searchResultsController: nil)
         search.searchBar.delegate = self
         search.delegate = self
+        search.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = search
         return search
     }()
@@ -131,10 +132,6 @@ extension MainCollectionViewController: UISearchBarDelegate, UISearchControllerD
         viewModel?.onSearchTextChanged(text: searchText)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel?.onSearchCanceled()
-    }
-    
     func willDismissSearchController(_ searchController: UISearchController) {
         viewModel?.onSearchCanceled()
     }
@@ -142,10 +139,12 @@ extension MainCollectionViewController: UISearchBarDelegate, UISearchControllerD
 }
 
 extension MainCollectionViewController: MainViewModelDelegate {
-    
-    func updateList(with movies: [FetchTrendingMoviesResponse.Movie]) {
+    func updateList(with movies: [FetchTrendingMoviesResponse.Movie], scrollToTop: Bool) {
         moviesDataSource = movies
         collectionView.reloadData()
+        if scrollToTop {
+            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+        }
     }
     
     func setLayoutMode(mode: LayoutMode) {

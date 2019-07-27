@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainViewModelDelegate: class {
-    func updateList(with movies: [FetchTrendingMoviesResponse.Movie])
+    func updateList(with movies: [FetchTrendingMoviesResponse.Movie], scrollToTop: Bool)
     func setLayoutMode(mode: LayoutMode)
     func showMovieDetails(movie: FetchTrendingMoviesResponse.Movie)
 }
@@ -96,7 +96,7 @@ class MainViewModel {
         }
         nextPage += 1
         moviesList.append(contentsOf: movies)
-        delegate?.updateList(with: moviesList)
+        delegate?.updateList(with: moviesList, scrollToTop: nextPage == 2)
     }
     
 }
