@@ -19,7 +19,7 @@ enum LayoutMode: Int {
     case grid = 1
     case list = 2
     
-    static func mode(from rawValue: Int)-> LayoutMode? {
+    static func mode(from rawValue: Int) -> LayoutMode? {
         switch rawValue {
         case LayoutMode.list.rawValue:
             return .list
@@ -47,7 +47,8 @@ class MainViewModel {
     }
     
     func onViewDidLoad() {
-        let layoutMode = LayoutMode.mode(from: UserDefaults.standard.integer(forKey: Constants.layoutModeUserDefaultsKey))
+        let modeId = UserDefaults.standard.integer(forKey: Constants.layoutModeUserDefaultsKey)
+        let layoutMode = LayoutMode.mode(from: modeId)
         delegate?.setLayoutMode(mode: layoutMode ?? .grid)
         isFetching = true
         loadNextTrendingMoviesPage()
@@ -94,7 +95,7 @@ class MainViewModel {
     private func loadNextTrendingMoviesPage() {
         apiManager.fetchTrendingMovies(page: nextPage, completion: { [weak self] movies in
             self?.handleResults(movies: movies)
-            }, onError: { [weak self] error in
+            }, onError: { [weak self] _ in
                 self?.delegate?.showError(message: "FETCH_TRENDING_ERROR".localized())
             })
     }
@@ -102,7 +103,7 @@ class MainViewModel {
     private func loadNextSearchPage() {
         apiManager.searchMovies(query: queryText, page: nextPage, completion: { [weak self] movies in
             self?.handleResults(movies: movies)
-            }, onError: { [weak self] error in
+            }, onError: { [weak self] _ in
                 self?.delegate?.showError(message: "SEARCH_ERROR".localized())
             })
     }

@@ -17,7 +17,7 @@ protocol DetailsViewModelDelegate: class {
 
 class DetailsViewModel {
     
-    private let delegate: DetailsViewModelDelegate
+    private weak var delegate: DetailsViewModelDelegate?
     private let movie: Movie
     
     init(delegate: DetailsViewModelDelegate, movie: Movie) {
@@ -26,17 +26,17 @@ class DetailsViewModel {
     }
     
     func onViewDidLoad() {
-        delegate.update(with: movie)
-        let genres: [String] = movie.genreIds.map { id -> String in
-            return GenresCache.genreName(for: id)
+        delegate?.update(with: movie)
+        let genres: [String] = movie.genreIds.map { genreId -> String in
+            return GenresCache.genreName(for: genreId)
         }
-        delegate.update(with: movie.releaseDate.asDate(with: Constants.apiDateFormat))
-        delegate.update(with: genres.joined(separator: ", "))
+        delegate?.update(with: movie.releaseDate.asDate(with: Constants.apiDateFormat))
+        delegate?.update(with: genres.joined(separator: ", "))
     }
     
     func onPosterTapped() {
         guard let url = movie.posterURL else { return }
-        delegate.showZoomForImage(in: url)
+        delegate?.showZoomForImage(in: url)
     }
     
 }

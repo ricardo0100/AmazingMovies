@@ -43,25 +43,33 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
         return moviesDataSource.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = selectedMode == .list ? movieCell(for: indexPath) : posterCell(for: indexPath)
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath) {
         let movie = moviesDataSource[indexPath.item]
         viewModel?.onDidSelect(movie: movie)
     }
     
     private func posterCell(for indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as! PosterCollectionViewCell
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath)
+            // swiftlint:disable:next force_cast
+            as! PosterCollectionViewCell
         let movie = moviesDataSource[indexPath.item]
         cell.update(with: movie)
         return cell
     }
     
     private func movieCell(for indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath)
+            // swiftlint:disable:next force_cast
+            as! MovieCollectionViewCell
         let movie = moviesDataSource[indexPath.item]
         cell.update(with: movie)
         return cell
@@ -118,8 +126,8 @@ class MainCollectionViewController: UICollectionViewController, IdentifierLoadab
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
-        if (bottomEdge >= scrollView.contentSize.height) {
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height {
             viewModel?.onDidScrollToBottom()
         }
     }

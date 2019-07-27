@@ -18,12 +18,12 @@ struct GenresCache {
     
     static func update(with list: [Genre]) {
         list.forEach {
-            GenresCache.genres[$0.id] = $0.name
+            GenresCache.genres[$0.genreId] = $0.name
         }
     }
     
-    static func genreName(for id: Int) -> String {
-        return GenresCache.genres[id] ?? ""
+    static func genreName(for genreId: Int) -> String {
+        return GenresCache.genres[genreId] ?? ""
     }
     
 }

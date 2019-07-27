@@ -11,35 +11,35 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
     
-    case Genres
-    case Trending(page: Int)
-    case Search(query: String, page: Int)
+    case genres
+    case trending(page: Int)
+    case search(query: String, page: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .Genres, .Trending, .Search:
+        case .genres, .trending, .search:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .Genres:
+        case .genres:
             return "/genre/movie/list"
-        case .Trending:
+        case .trending:
             return "/trending/movie/day"
-        case .Search:
+        case .search:
             return "/search/movie"
         }
     }
     
     var parameters: [String: Any] {
         switch self {
-        case .Genres:
+        case .genres:
             return [:]
-        case .Trending(let page):
+        case .trending(let page):
             return ["page": page]
-        case .Search(let query, let page):
+        case .search(let query, let page):
             return ["page": page, "query": query]
         }
     }

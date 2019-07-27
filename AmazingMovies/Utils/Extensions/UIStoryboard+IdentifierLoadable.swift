@@ -35,6 +35,8 @@ extension IdentifierLoadable where Self: UICollectionViewController {
 
 extension UIStoryboard {
     static func loadViewController<T>() -> T where T: IdentifierLoadable, T: UIViewController {
-        return UIStoryboard(name: T.storyboardName(), bundle: nil).instantiateViewController(withIdentifier: T.storyboardIdentifier()) as! T
+        return UIStoryboard(name: T.storyboardName(), bundle: nil)
+            // swiftlint:disable:next force_cast
+            .instantiateViewController(withIdentifier: T.storyboardIdentifier()) as! T
     }
 }

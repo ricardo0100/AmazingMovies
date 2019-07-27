@@ -9,6 +9,6 @@
 import Foundation
 
 class Genre: Codable {
-    let id: Int
+    let genreId: Int
     let name: String
 }

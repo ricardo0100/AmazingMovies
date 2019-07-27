@@ -18,7 +18,7 @@ protocol APIManager {
 struct APIManagerImplementation: APIManager {
     
     func fetchTrendingMovies(page: Int, completion: @escaping ([Movie]) -> Void, onError: ((Error) -> Void)? = nil) {
-        AF.request(APIRouter.Trending(page: page))
+        AF.request(APIRouter.trending(page: page))
             .responseDecodable { (response: DataResponse<MoviesListResponse>) in
                 if let error = response.error {
                     print("Error fetching trending movies: \(error)")
@@ -35,8 +35,11 @@ struct APIManagerImplementation: APIManager {
         }
     }
     
-    func searchMovies(query: String, page: Int, completion: @escaping ([Movie]) -> Void, onError: ((Error) -> Void)? = nil) {
-        AF.request(APIRouter.Search(query: query, page: page))
+    func searchMovies(query: String,
+                      page: Int,
+                      completion: @escaping ([Movie]) -> Void,
+                      onError: ((Error) -> Void)? = nil) {
+        AF.request(APIRouter.search(query: query, page: page))
             .responseDecodable { (response: DataResponse<MoviesListResponse>) in
                 if let error = response.error {
                     print("Error searching movies: \(error)")
@@ -54,7 +57,7 @@ struct APIManagerImplementation: APIManager {
     }
     
     func fetchGenres(completion: @escaping ([Genre]) -> Void, onError: ((Error) -> Void)? = nil) {
-        AF.request(APIRouter.Genres)
+        AF.request(APIRouter.genres)
             .responseDecodable { (response: DataResponse<GenresListResponse>) in
                 if let error = response.error {
                     print("Error fetching genres: \(error)")
