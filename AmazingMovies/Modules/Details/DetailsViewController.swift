@@ -18,6 +18,10 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     @IBOutlet private weak var releaseLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var zoomIconImageView: UIImageView!
+    @IBOutlet private weak var posterTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var posterIconImageView: UIImageView!
+    @IBOutlet weak var noPosterLabel: UILabel!
     
     private var viewModel: DetailsViewModel?
     
@@ -40,6 +44,10 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
         zoomIconImageView.image = zoomIconImageView.image?.withRenderingMode(.alwaysTemplate)
         zoomIconImageView.tintColor = .white
         zoomIconImageView.tintColorDidChange()
+        
+        posterIconImageView.image = posterIconImageView.image?.withRenderingMode(.alwaysTemplate)
+        posterIconImageView.tintColor = .white
+        posterIconImageView.tintColorDidChange()
     }
     
     @objc private func didTapPosterButton() {
@@ -52,8 +60,21 @@ extension DetailsViewController: DetailsViewModelDelegate {
     
     func update(with movie: Movie) {
         titleLabel.text = movie.title
-        backdropImageView.kf.setImage(with: movie.backdropURL)
-        posterImageView.kf.setImage(with: movie.posterURL)
+        if movie.backdropURL != nil {
+            backdropImageView.kf.setImage(with: movie.backdropURL)
+        } else {
+            posterTopConstraint.constant = 24
+            titleTopConstraint.constant = 24
+        }
+        if movie.posterURL != nil {
+            posterImageView.kf.setImage(with: movie.posterURL)
+        } else {
+            posterImageView.layer.borderWidth = 1
+            posterImageView.layer.borderColor = UIColor.white.cgColor
+            zoomIconImageView.isHidden = true
+            noPosterLabel.isHidden = false
+            posterIconImageView.isHidden = false
+        }
         overviewLabel.text = movie.overview
     }
     
