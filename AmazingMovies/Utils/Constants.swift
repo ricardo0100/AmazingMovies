@@ -10,4 +10,5 @@ import Foundation
 
 struct Constants {
     static let apiDateFormat = "yyyy-MM-dd"
+    static let layoutModeUserDefaultsKey = "LayoutMode"
 }

@@ -14,8 +14,20 @@ protocol MainViewModelDelegate: class {
     func showMovieDetails(movie: Movie)
 }
 
-enum LayoutMode {
-    case grid, list
+enum LayoutMode: Int {
+    case grid = 1
+    case list = 2
+    
+    static func mode(from rawValue: Int)-> LayoutMode? {
+        switch rawValue {
+        case LayoutMode.list.rawValue:
+            return .list
+        case LayoutMode.grid.rawValue:
+            return .grid
+        default:
+            return nil
+        }
+    }
 }
 
 class MainViewModel {
@@ -34,19 +46,20 @@ class MainViewModel {
     }
     
     func onViewDidLoad() {
-        delegate?.setLayoutMode(mode: .grid)
+        let layoutMode = LayoutMode.mode(from: UserDefaults.standard.integer(forKey: Constants.layoutModeUserDefaultsKey))
+        delegate?.setLayoutMode(mode: layoutMode ?? .grid)
         isFetching = true
-        apiManager.fetchTrendingMovies(page: nextPage) { [weak self] movies in
-            self?.handleResults(movies: movies)
-        }
+        loadNextTrendingMoviesPage()
     }
     
     func onListButtonTapped() {
         delegate?.setLayoutMode(mode: .list)
+        UserDefaults.standard.set(LayoutMode.list.rawValue, forKey: Constants.layoutModeUserDefaultsKey)
     }
     
     func onGridButtonTapped() {
         delegate?.setLayoutMode(mode: .grid)
+        UserDefaults.standard.set(LayoutMode.grid.rawValue, forKey: Constants.layoutModeUserDefaultsKey)
     }
     
     func onDidSelect(movie: Movie) {
