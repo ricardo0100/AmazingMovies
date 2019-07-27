@@ -17,7 +17,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cinema_icon" translatesAutoresizingMaskIntoConstraints="NO" id="8jZ-nY-X7D">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Jm8-rJ-RqA"/>
+                                    <constraint firstAttribute="width" constant="240" id="j8U-DP-Bml"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazing Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bem-A0-Zd2">
+                                <rect key="frame" x="108" y="592" width="198" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8jZ-nY-X7D" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7KS-8M-B7E"/>
+                            <constraint firstItem="bem-A0-Zd2" firstAttribute="top" secondItem="8jZ-nY-X7D" secondAttribute="bottom" constant="24" id="R3b-sm-Vhf"/>
+                            <constraint firstItem="bem-A0-Zd2" firstAttribute="centerX" secondItem="8jZ-nY-X7D" secondAttribute="centerX" id="Wfr-ub-urc"/>
+                            <constraint firstItem="8jZ-nY-X7D" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XFq-jJ-66o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cinema_icon" width="512" height="512"/>
+    </resources>
 </document>

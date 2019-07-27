@@ -55,7 +55,7 @@
 		CF72FF1922EC7EF80072D55E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CF72FF1D22EC80BC0072D55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF72FF1E22EC80BC0072D55E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CFCD13AC22E7AF0C0033549D /* AmazingMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFCD13AC22E7AF0C0033549D /* Amazing Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amazing Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD13AF22E7AF0C0033549D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFCD13B122E7AF0C0033549D /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		CFCD13B622E7AF0D0033549D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		CFCD13AD22E7AF0C0033549D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CFCD13AC22E7AF0C0033549D /* AmazingMovies.app */,
+				CFCD13AC22E7AF0C0033549D /* Amazing Movies.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CFCD13AB22E7AF0C0033549D /* AmazingMovies */ = {
+		CFCD13AB22E7AF0C0033549D /* Amazing Movies */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFCD13BE22E7AF0D0033549D /* Build configuration list for PBXNativeTarget "AmazingMovies" */;
+			buildConfigurationList = CFCD13BE22E7AF0D0033549D /* Build configuration list for PBXNativeTarget "Amazing Movies" */;
 			buildPhases = (
 				BEE6F4EBA7AD3B82B4695D88 /* [CP] Check Pods Manifest.lock */,
 				CFCD13A822E7AF0C0033549D /* Sources */,
@@ -251,9 +251,9 @@
 			);
 			dependencies = (
 			);
-			name = AmazingMovies;
+			name = "Amazing Movies";
 			productName = AmazingMovies;
-			productReference = CFCD13AC22E7AF0C0033549D /* AmazingMovies.app */;
+			productReference = CFCD13AC22E7AF0C0033549D /* Amazing Movies.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -284,7 +284,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CFCD13AB22E7AF0C0033549D /* AmazingMovies */,
+				CFCD13AB22E7AF0C0033549D /* Amazing Movies */,
 			);
 		};
 /* End PBXProject section */
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFCD13BE22E7AF0D0033549D /* Build configuration list for PBXNativeTarget "AmazingMovies" */ = {
+		CFCD13BE22E7AF0D0033549D /* Build configuration list for PBXNativeTarget "Amazing Movies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFCD13BF22E7AF0D0033549D /* Debug */,
