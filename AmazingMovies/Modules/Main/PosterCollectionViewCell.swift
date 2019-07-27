@@ -14,9 +14,23 @@ class PosterCollectionViewCell: UICollectionViewCell {
     static let identifier = "PosterCell"
     
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    override func prepareForReuse() {
+        titleLabel.text = nil
+        titleLabel.isHidden = true
+        imageView.image = nil
+        imageView.isHidden = false
+    }
     
     func update(with movie: Movie) {
-        imageView.kf.setImage(with: movie.posterURL)
+        if movie.posterURL == nil {
+            imageView.isHidden = true
+            titleLabel.isHidden = false
+            titleLabel.text = "📸\n(No poster)\n\n\(movie.title)"
+        } else {
+            imageView.kf.setImage(with: movie.posterURL)
+        }
     }
     
 }
