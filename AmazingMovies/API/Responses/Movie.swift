@@ -15,6 +15,8 @@ struct Movie: Codable {
     let posterPath: String?
     let backdropPath: String?
     let popularity: Float
+    let genreIds: [Int]
+    let releaseDate: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,6 +25,8 @@ struct Movie: Codable {
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case popularity
+        case genreIds = "genre_ids"
+        case releaseDate = "release_date"
     }
     
     var posterURL: URL? {

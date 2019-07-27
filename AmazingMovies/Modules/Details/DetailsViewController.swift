@@ -14,6 +14,8 @@ class DetailsViewController: UIViewController, IdentifierLoadable {
     @IBOutlet private weak var backdropImageView: UIImageView!
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var overviewLabel: UILabel!
+    @IBOutlet private weak var genresLabel: UILabel!
+    @IBOutlet private weak var releaseLabel: UILabel!
     
     private var viewModel: DetailsViewModel?
     
@@ -37,6 +39,18 @@ extension DetailsViewController: DetailsViewModelDelegate {
         backdropImageView.kf.setImage(with: movie.backdropURL)
         posterImageView.kf.setImage(with: movie.posterURL)
         overviewLabel.text = movie.overview
+    }
+    
+    func update(with genres: String) {
+        genresLabel.text = genres
+    }
+    
+    func update(with releaseDate: Date?) {
+        guard let date = releaseDate else {
+            releaseLabel.text = nil
+            return
+        }
+        releaseLabel.text = date.toString(with: "yyyy")
     }
     
 }

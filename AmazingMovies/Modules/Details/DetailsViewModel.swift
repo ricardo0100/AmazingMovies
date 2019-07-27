@@ -10,6 +10,8 @@ import Foundation
 
 protocol DetailsViewModelDelegate: class {
     func update(with movie: Movie)
+    func update(with genres: String)
+    func update(with releaseDate: Date?)
 }
 
 class DetailsViewModel {
@@ -24,6 +26,11 @@ class DetailsViewModel {
     
     func onViewDidLoad() {
         delegate.update(with: movie)
+        let genres: [String] = movie.genreIds.map { id -> String in
+            return GenresCache.genreName(for: id)
+        }
+        delegate.update(with: movie.releaseDate.asDate(with: Constants.apiDateFormat))
+        delegate.update(with: genres.joined(separator: ", "))
     }
     
 }

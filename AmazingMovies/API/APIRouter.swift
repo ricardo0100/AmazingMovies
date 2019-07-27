@@ -14,18 +14,21 @@ enum APIRouter: URLRequestConvertible {
     static let baseURL = "https://api.themoviedb.org/3"
     static let apiKey = "1f54bd990f1cdfb230adb312546d765d"
     
+    case Genres
     case Trending(page: Int)
     case Search(query: String, page: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .Trending, .Search:
+        case .Genres, .Trending, .Search:
             return .get
         }
     }
     
     var path: String {
         switch self {
+        case .Genres:
+            return "/genre/movie/list"
         case .Trending:
             return "/trending/movie/day"
         case .Search:
@@ -35,6 +38,8 @@ enum APIRouter: URLRequestConvertible {
     
     var parameters: [String: Any] {
         switch self {
+        case .Genres:
+            return [:]
         case .Trending(let page):
             return ["page": page]
         case .Search(let query, let page):

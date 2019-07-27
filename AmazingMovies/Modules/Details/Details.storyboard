@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09K-om-Umx">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="26d-fz-9mn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="232.5"/>
@@ -31,32 +31,49 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="957-gM-R0c">
-                                                <rect key="frame" x="8" y="240.5" width="140" height="207.5"/>
+                                                <rect key="frame" x="8" y="172.5" width="140" height="207.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="YDG-Kj-vr6"/>
                                                     <constraint firstAttribute="width" secondItem="957-gM-R0c" secondAttribute="height" multiplier="27:40" id="eDd-cS-jbS"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOl-kg-HEL">
-                                                <rect key="frame" x="156" y="240.5" width="250" height="207.5"/>
+                                                <rect key="frame" x="156" y="248.5" width="250" height="207.5"/>
                                                 <string key="text">Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comedy, Drama, Terror, Sci-Fi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-zG-2Jk">
+                                                <rect key="frame" x="8" y="388" width="140" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU9-Vb-EEd">
+                                                <rect key="frame" x="8" y="425" width="30" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="957-gM-R0c" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="8" id="AYe-gv-GXA"/>
+                                            <constraint firstItem="957-gM-R0c" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="-60" id="AYe-gv-GXA"/>
+                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="trailing" secondItem="957-gM-R0c" secondAttribute="trailing" id="BNg-kH-0Lm"/>
                                             <constraint firstAttribute="trailing" secondItem="26d-fz-9mn" secondAttribute="trailing" id="CpB-91-cKZ"/>
-                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="top" secondItem="957-gM-R0c" secondAttribute="top" id="IOc-3v-3xo"/>
-                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="24" id="LdK-XW-QTu"/>
+                                            <constraint firstItem="XOl-kg-HEL" firstAttribute="top" secondItem="26d-fz-9mn" secondAttribute="bottom" constant="16" id="KqM-yb-FqB"/>
+                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="leading" secondItem="ZXY-zG-2Jk" secondAttribute="leading" id="MOm-G7-rNq"/>
                                             <constraint firstItem="26d-fz-9mn" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" id="S6h-mt-67T"/>
                                             <constraint firstAttribute="trailing" secondItem="XOl-kg-HEL" secondAttribute="trailing" constant="8" id="T8o-rV-eT6"/>
                                             <constraint firstItem="XOl-kg-HEL" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="trailing" constant="8" id="UvP-e0-SjV"/>
                                             <constraint firstItem="26d-fz-9mn" firstAttribute="top" secondItem="09K-om-Umx" secondAttribute="top" id="VJL-ln-JlG"/>
+                                            <constraint firstItem="dU9-Vb-EEd" firstAttribute="top" secondItem="ZXY-zG-2Jk" secondAttribute="bottom" constant="8" id="knT-7w-IcD"/>
                                             <constraint firstItem="957-gM-R0c" firstAttribute="leading" secondItem="09K-om-Umx" secondAttribute="leading" constant="8" id="oyI-sQ-Vri"/>
+                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="top" secondItem="957-gM-R0c" secondAttribute="bottom" constant="8" id="pXQ-r4-D06"/>
                                             <constraint firstItem="XOl-kg-HEL" firstAttribute="height" relation="greaterThanOrEqual" secondItem="957-gM-R0c" secondAttribute="height" id="vs1-o4-EKQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="XOl-kg-HEL" secondAttribute="bottom" constant="24" id="xFL-Ze-Thw"/>
+                                            <constraint firstItem="ZXY-zG-2Jk" firstAttribute="leading" secondItem="957-gM-R0c" secondAttribute="leading" id="zoo-fd-QIj"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -81,8 +98,10 @@
                     </view>
                     <connections>
                         <outlet property="backdropImageView" destination="26d-fz-9mn" id="Uoo-fp-uHZ"/>
+                        <outlet property="genresLabel" destination="ZXY-zG-2Jk" id="gQ3-50-PgX"/>
                         <outlet property="overviewLabel" destination="XOl-kg-HEL" id="JaH-vo-BKs"/>
                         <outlet property="posterImageView" destination="957-gM-R0c" id="KnM-sd-34p"/>
+                        <outlet property="releaseLabel" destination="dU9-Vb-EEd" id="woi-ve-vLP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOB-NX-n2t" userLabel="First Responder" sceneMemberID="firstResponder"/>

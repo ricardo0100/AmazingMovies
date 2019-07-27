@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.rootViewController = MainCollectionViewController.newInstance()
         window?.makeKeyAndVisible()
+        APIManagerImplementation().fetchGenres { genres in
+            GenresCache.update(with: genres)
+        }
         return true
     }
 

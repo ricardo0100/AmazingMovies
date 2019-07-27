@@ -12,6 +12,7 @@ import Alamofire
 protocol APIManager {
     func fetchTrendingMovies(page: Int, completion: @escaping ([Movie]) -> Void)
     func searchMovies(query: String, page: Int, completion: @escaping ([Movie]) -> Void)
+    func fetchGenres(completion: @escaping ([Genre]) -> Void)
 }
 
 struct APIManagerImplementation: APIManager {
@@ -34,13 +35,24 @@ struct APIManagerImplementation: APIManager {
         AF.request(APIRouter.Search(query: query, page: page))
             .responseDecodable { (response: DataResponse<MoviesListResponse>) in
                 if let error = response.error {
-                    print("Error fetching trending movies: \(error)")
+                    print("Error searching movies: \(error)")
                 }
                 guard var movies = response.value?.results else { return }
                 movies.sort(by: { (movie1, movie2) -> Bool in
                     return movie1.popularity > movie2.popularity
                 })
                 completion(movies)
+        }
+    }
+    
+    func fetchGenres(completion: @escaping ([Genre]) -> Void) {
+        AF.request(APIRouter.Genres)
+            .responseDecodable { (response: DataResponse<GenresListResponse>) in
+                if let error = response.error {
+                    print("Error fetching genres: \(error)")
+                }
+                guard let genres = response.value?.genres else { return }
+                completion(genres)
         }
     }
     
