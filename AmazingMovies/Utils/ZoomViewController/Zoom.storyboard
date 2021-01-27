@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Zoom View Controller-->
+        <scene sceneID="PmK-xq-IUZ">
+            <objects>
+                <viewController storyboardIdentifier="ZoomViewController" id="EbL-Ge-DYS" customClass="ZoomViewController" customModule="AmazingMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2BF-Kf-ibD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="PFH-mm-Rt7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k7g-fB-Qgn">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="k7g-fB-Qgn" firstAttribute="width" secondItem="PFH-mm-Rt7" secondAttribute="width" id="5c5-9E-EXo"/>
+                                    <constraint firstItem="k7g-fB-Qgn" firstAttribute="leading" secondItem="PFH-mm-Rt7" secondAttribute="leading" id="PT5-oy-nJ7"/>
+                                    <constraint firstItem="k7g-fB-Qgn" firstAttribute="top" secondItem="PFH-mm-Rt7" secondAttribute="top" id="Pvp-D2-YFy"/>
+                                    <constraint firstItem="k7g-fB-Qgn" firstAttribute="height" secondItem="PFH-mm-Rt7" secondAttribute="height" id="fdL-CM-B2s"/>
+                                    <constraint firstAttribute="trailing" secondItem="k7g-fB-Qgn" secondAttribute="trailing" id="lug-XD-HRg"/>
+                                    <constraint firstAttribute="bottom" secondItem="k7g-fB-Qgn" secondAttribute="bottom" id="roE-B8-PlN"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PFH-mm-Rt7" firstAttribute="top" secondItem="9wN-NT-oW1" secondAttribute="top" id="0CQ-9N-9P3"/>
+                            <constraint firstItem="9wN-NT-oW1" firstAttribute="trailing" secondItem="PFH-mm-Rt7" secondAttribute="trailing" id="pdR-OJ-Mj9"/>
+                            <constraint firstItem="PFH-mm-Rt7" firstAttribute="leading" secondItem="9wN-NT-oW1" secondAttribute="leading" id="sp2-KS-VZH"/>
+                            <constraint firstItem="9wN-NT-oW1" firstAttribute="bottom" secondItem="PFH-mm-Rt7" secondAttribute="bottom" id="w9n-6U-j0h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9wN-NT-oW1"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="k7g-fB-Qgn" id="9WJ-kz-WU2"/>
+                        <outlet property="scrollView" destination="PFH-mm-Rt7" id="2TI-CF-RPt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJ2-Dh-81L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

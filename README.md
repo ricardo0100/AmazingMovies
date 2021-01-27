@@ -2,6 +2,12 @@
 
 > Information for cinephiles
 
+## Screenshots
+![Screenshot 1](https://github.com/ricardo0100/AmazingMovies/blob/dev/Screenshots/Screenshot-1.png)
+![Screenshot 2](https://github.com/ricardo0100/AmazingMovies/blob/dev/Screenshots/Screenshot-2.png)
+![Screenshot 3](https://github.com/ricardo0100/AmazingMovies/blob/dev/Screenshots/Screenshot-3.png)
+![Screenshot 4](https://github.com/ricardo0100/AmazingMovies/blob/dev/Screenshots/Screenshot-4.png)
+
 ## How to run the project
 
 1. Clone or download the code
@@ -18,3 +24,5 @@
 ## Dependencies
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) for API requests
+- [Kingfisher](https://github.com/onevcat/Kingfishere) for images loading and caching
+- [SwiftLint](https://github.com/realm/SwiftLint) to keep the code style in good shape

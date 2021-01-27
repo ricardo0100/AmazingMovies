@@ -1,0 +1,11 @@
+/* 
+  Strings.strings
+  AmazingMovies
+
+  Created by Ricardo Gehrke Filho on 27/07/19.
+  Copyright © 2019 Ricardo Gehrke Filho. All rights reserved.
+*/
+
+"ERROR_TITLE" = "Oops!";
+"FETCH_TRENDING_ERROR" = "Error fetching trending movies.";
+"SEARCH_ERROR" = "Error searching movies.";
